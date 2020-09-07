@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style id="sty">
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        ul{
+            list-style: none;
+        }
+        #wrap{
+            width: 800px;
+            height: 800px;
+            margin:150px auto;
+        }
+        #pic{
+            width: 800px;
+            height: 800px;
+            perspective:1500px;
+            transform-style: preserve-3d;
+        }
+        #pic ul li{
+            position: relative;
+            height: 800px;
+            float: left;
+            box-sizing: border-box;
+            transform-style: preserve-3d;
+            transition:1s;
+            margin-left: -1px;
+        }
+        #pic ul li div{
+            height: 800px;
+            position: absolute;
+        }
+        #pic ul li div:nth-child(1){
+            top:-800px;
+            transform-origin:bottom;/*元素旋转轴心*/
+            transform:translateZ(180px) rotatex(90deg);
+            background:url("图片/dsn1.png");
+            background-size:800px 800px;
+        }
+        #pic ul li div:nth-child(2){
+            top:360px;
+            transform-origin:top;/*元素旋转轴心*/
+            transform:translateZ(180px) rotatex(-90deg);
+            background: url("图片/dsn3.png");
+            background-size:800px 800px;
+        }
+        #pic ul li div:nth-child(3){
+            transform:translateZ(180px);
+            background: url("图片/dsn6.png");
+            background-size:800px 800px;
+        }
+        #pic ul li div:nth-child(4){
+            transform: translateZ(-180px);
+            background: url("图片/dsn9.png");
+            background-size:800px 800px;
+        }
+        #pic ul li:hover{
+            transition:1s;
+            transform: rotatex(-180deg);
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="pic">
+            <ul>
+                <!-- <li>
+                    <div>上</div>
+                    <div>下</div>
+                    <div>前</div>
+                    <div>后</div>
+                </li>
+                <li>
+                    <div>上</div>
+                    <div>下</div>
+                    <div>前</div>
+                    <div>后</div>
+                </li>
+                <li>
+                    <div>上</div>
+                    <div>下</div>
+                    <div>前</div>
+                    <div>后</div>
+                </li>
+                <li>
+                    <div>上</div>
+                    <div>下</div>
+                    <div>前</div>
+                    <div>后</div>
+                </li> -->
+            </ul>
+        </div>
+        <div id="tab">
+            <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var oul=document.getElementsByTagName("ul")[0];
+        var sty=document.getElementById("sty");
+        console.log(sty);
+        play(10);
+        function play(num){
+            var width=800/num;
+            var uhtml="";
+            var phtml="";
+            var zhtml="";
+            var z=0;
+            for(var i=0;i<num;i++){
+                if(i>num/2){
+                    z--;
+                    zhtml+="#pic ul li:nth-child("+(i+1)+")";
+                }
+                uhtml+=`<li><div></div><div></div><div></div><div></div></li>`;
+                phtml+="#pic ul li:nth-child("+(i+1)+") div{background-position:"+-width*i+"px;}"
+            }
+            oul.innerHTML=uhtml;
+            sty.innerHTML+=zhtml+phtml+"#pic li,#pic div{width:"+width+"px}";
+        }
+    </script>
+</body>
+</html>

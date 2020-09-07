@@ -1,0 +1,162 @@
+*{
+    margin: 0px;padding: 0px;
+}
+a{
+    text-decoration:none;
+}
+.beij{
+    width: 100%;
+    height: 765px;
+    background:url(./图片/login.png) top/cover no-repeat;
+}
+.log{
+    width: 380px;
+    height: 687px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 60px 0px;
+    /* background-color: #fff; */
+}
+.login-logo{
+    width: 380px;
+    height: 46px;
+    text-align: center;
+    margin: 0 auto;
+}
+.login-logo>img{
+    width: 126.5px;
+    height: 46px;
+}
+.title{
+    font-size: 24px;
+    color: #fff;
+    vertical-align: bottom;
+    text-shadow: 0 0 4px rgba(0,0,0,.3);
+    line-height: 46px;
+}
+.login-section{
+    width: 380px;
+    height: 476px;
+    margin-top: 45px;
+    padding: 10px 0;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+    background: hsla(0,0%,100%,.95);
+    position: relative;
+    box-sizing: border-box;
+}
+.login-form{
+    width: 330px;
+    height: 416px;
+    box-sizing: border-box;
+    padding: 30px 0 0 0;
+    margin: 0 auto;
+}
+.group{
+    width: 330px;
+    height: 40px;
+}
+
+.tip{
+    width: 330px;
+    height: 30px;
+}
+.login-form>div:first-child>span{
+    width: 78px;
+    height: 40px;
+    line-height: 40px;
+    border-color: #d7d7d7;
+    display: block;
+    box-sizing: border-box;
+    border: 1px solid silver;
+    border-radius: 3px;
+    float: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 24px 0 10px;
+    font-size: 12px;
+}
+.login-form>div:first-child>span::after{
+    position: absolute;
+    left:87px;
+    top: 64px;
+    margin-top: -5px;
+    content: "";
+    display: block;
+    border:5px solid transparent;
+    border-top: 5px solid #666;
+}
+.login-form>div:first-child>input{
+    width: 248px;
+    height: 40px;
+    margin-left: 4px ;
+}
+input{
+    box-sizing: border-box;
+    padding: 3px 7px;
+    border: 1px solid #d7d7d7;
+    line-height: 40px;
+    font-size: 14px;
+    /* vertical-align: top; */
+    background: #fff;
+    outline: none;
+}
+.login-form>div:nth-child(3)>input{
+    width: 200px;
+    height: 40px;
+}
+/* 验证码 */
+.login-form>div:nth-child(3)>img{
+    width: 126px;
+    height: 40px;
+    margin-left: 4px;
+    float:right;
+}
+.login-form>div:nth-child(3){
+    position: relative;
+}
+#code{
+    position: absolute;
+    top: 9px;
+    right: 31px;
+    font-weight: 600;
+    color:#999;
+}
+.tip>span{
+    color: #ff654c;
+    line-height: 30px;
+}
+.login-form>div:nth-child(5)>input,.login-form>div:nth-child(7)>input,.login-form>div:nth-child(9)>input{
+    width: 100%;
+    height: 40px;
+}
+button{
+    display: inline-block;
+    box-sizing: border-box;
+    border: 0;
+    padding: 0 15px;
+    width: 100%;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    vertical-align: top;
+    background-color: #3f9f5f;
+    outline: none;
+}
+.bottom{
+    width: 330px;
+    height: 40px;
+    box-sizing: border-box;
+    padding: 10px 0;
+    line-height: 20px;
+    color: #959595;
+    font-size: 14px;
+}
+.bottom>span:last-child{
+    float: right;
+}
+.bottom>span>a{
+    color: #3f9f5f;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <h1 id="h1"></h1>
+    <script>
+        //倒计时
+        function getCountDown(y, m, d, h, min, s) {
+            var nowT = new Date().getTime();//获取现在时间的毫秒数
+            var futureT = new Date('2020/7/30').getTime();//获取未来时间的毫秒数
+            console.log(nowT, futureT);
+            if (futureT < nowT) {
+                return false;//因为是倒计时，所以必须判断未来时间大于现在时间
+            }
+            var mistiming = futureT - nowT;//获取时间差
+            console.log(mistiming);
+
+            //现在求这个时间差里有几天 时 分 秒；
+            var day = Math.floor(mistiming / 1000 / 60 / 60 / 24);//获取时间差里剩余的天数
+            var hours = Math.floor(mistiming / 1000 / 60 / 60 % 24);//获取时间差里剩余的小时数
+            var minutes = Math.floor(mistiming / 1000 / 60 % 60);//获取时间差里剩余的分钟数
+            var seconds = Math.floor(mistiming / 1000 % 60);//获取时间差里剩余的秒数
+            console.log(day, hours, minutes, seconds);
+            return ` ${day < 10 ? '0' + day : day}天${hours < 10 ? '0' + hours : hours}时${minutes < 10 ? '0' + minutes : minutes}分${seconds < 10 ? '0' + seconds : seconds}秒`//不足两位数的前面补0
+        }
+        getCountDown(2020, 7, 30)//实参
+        h1.innerHTML = getCountDown('2020/7/30');//写入到h页面里
+
+        var time = null;
+        time = setInterval(function () {//给他一个定时器，让他开始倒计时
+            h1.innerHTML = getCountDown('2020/7/30');
+
+        }, 1000)
+        //计算当前距离2020年国庆节还有？天？小时？分？秒
+//知道两者相差的值，最后换算成天，小时，分，秒
+var d1=new Date();//当前时间
+var d2=new Date('2020/10/1');//2020年国庆节
+//获取距离计算机元年的毫秒数，然后相减
+//console.log( d2.getTime()-d1.getTime() );
+//对象直接相减，也是得到的是相差的毫秒数
+//console.log( d2-d1 );
+var d=d2-d1;
+//单位换算为秒,向下取整
+d=parseInt( d/1000 );
+//console.log(d);
+//计算相差的天数=总的秒数/每天的秒数
+//向下取整
+var day=parseInt( d/(24*60*60) );//135
+
+//d是相差的秒数，计算相差的小时，去除里边所有的天数
+//95去除所有的10  95-9*10=5   95%10 = 5
+//console.log(d%(24*60*60));
+//console.log(d-day*24*60*60);//此时的d已经去除了135的秒数
+var hour=d%(24*60*60);//单位是秒
+//剩下的值转为小时=秒数/(每小时的秒数)
+hour=parseInt( hour/(60*60) );
+//计算相差的分钟，去除相差的小时
+var minute=d%(60*60);//单位是秒
+//转为分钟
+minute=parseInt( minute/60 );
+//计算相差的秒钟，去除相差的分钟
+var second=d%60;
+// console.log(`剩余${day}天${hour}小时${minute}分钟${second}秒`);
+var time = null;
+        time = setInterval(function () {//给他一个定时器，让他开始倒计时
+            console.log(`剩余${day}天${hour}小时${minute}分钟${second}秒`);
+     }, 1000)
+    </script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./zhuce.css">
+    <script src="./yzm.js"></script>
+</head>
+<body onload="yzm1()">
+    <div class="beij">
+        <div class="log">
+            <div class="login-logo">
+                <img src="./图片/login2.png" alt="">
+                <span class="title">注册</span>
+            </div>
+            <div class="login-section">
+                <div class="login-form">
+                    <div class="group">
+                        <span>86</span>
+                        <input onblur="check_phone()" onfocus="show_phone()" type="text" placeholder="输入用于登录的手机号码" id="phone">
+                    </div>
+                    <div class="tip">
+                        <span id="phone_msg"></span>
+                    </div>
+                    <div class="group">
+                        <input onblur="check_yzm()" nofocus="show_yzm()" type="text" placeholder="验证码" id="yzm">
+                        <img onclick="yzm1()" src="./图片/yzm.png" alt="">
+                        <span onclick="yzm1()" id="code"></span>
+                    </div>
+                    <div class="tip">
+                        <span id=yzm_msg></span>
+                    </div>
+                    <div class="group">
+                        <input onblur="check_uname()" onfocus="show_uname()" type="text" placeholder="起一个具有辨识度的用户名" id="uname">
+                    </div>
+                    <div class="tip">
+                        <span id="uname_msg"></span>
+                    </div>
+                    <div class="group">
+                        <input onblur="check_upwd()" onfocus="show_upwd()" type="text" placeholder="输入8-16位密码，需包含字母及数字" id="upwd">
+                    </div>
+                    <div class="tip">
+                        <span id="upwd_msg"></span>
+                    </div>
+                    <div class="gtoup">
+                        <input onblur="check_upwd1()" onfocus="show_upwd1()" type="text" placeholder="重新输入密码" id="upwd1">
+                    </div>
+                    <div class="tip">
+                        <span id="upwd1_msg"></span>
+                    </div>
+                    <button onclick="zhuce()">注册</button>
+                    <div class="bottom">
+                        <span>已有穷游账户？<a href="">登录</a></span>
+                        <span>同意<a href="">会员条款</a>和<a href="">免责条款</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+    <iframe src="./footer/footer.html" frameborder="0" width="100%" height="218px" scrolling="no"></iframe>
+    </footer>
+</body>
+</html>

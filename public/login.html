@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .login {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+        width: 300px;
+        height: 300px;
+      }
+      #uname,
+      #upwd {
+        box-sizing: border-box;
+        padding: 3px 7px;
+        border: 1px solid #d7d7d7;
+        font-size: 14px;
+        vertical-align: top;
+        background: #fff;
+        outline: none;
+      }
+      #uname_msg,
+      #upwd_msg {
+        color: #ff654c;
+        line-height: 30px;
+        font-size: 12px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login">
+      <div class="input">
+        帐号：<input
+          onblur="check_uname()"
+          onfocus="show_uname()"
+          type="text"
+          id="uname"
+          placeholder="手机号/邮箱/用户名"
+        />
+        <div><span id="uname_msg"></span></div>
+        密码：<input
+          onblur="check_upwd()"
+          onfocus="show_upwd()"
+          type="password"
+          id="upwd"
+          placeholder="密码"
+        />
+        <div><span id="upwd_msg"></span></div>
+        <br />
+        <button onclick="login()">登录</button>
+      </div>
+    </div>
+    <script>
+      function show_uname() {
+        uname_msg.innerHTML = "";
+      }
+      function check_uname() {
+        var $uname = uname.value;
+        if (!$uname) {
+          uname_msg.innerHTML = "手机号/请输入邮箱/用户名";
+        } else {
+          uname_msg.innerHTML = "";
+        }
+      }
+      function show_upwd() {
+        upwd_msg.innerHTML = "";
+      }
+      function check_upwd() {
+        var $upwd = upwd.value;
+        if (!$upwd) {
+          upwd_msg.innerHTML = "请输入登录密码";
+        } else {
+          upwd_msg.innerHTML = "";
+        }
+      }
+      function login() {
+        var $uname = uname.value;
+        // console.log($uname);
+        var $upwd = upwd.value;
+        // var $phone=phone.value;
+        // if(!$phone){phone_msg.innerHTML="手机号码不能为空";return;}
+        if (!$uname) {
+          uname_msg.innerHTML = "用户名不能为空";
+          return;
+        }
+        if (!$upwd) {
+          upwd_msg.innerHTML = "密码不能为空";
+          return;
+        }
+      }
+    </script>
+  </body>
+</html>
